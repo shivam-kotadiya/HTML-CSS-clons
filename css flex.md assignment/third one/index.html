@@ -1,0 +1,525 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+
+        .mainwhitecart {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        .sudoku {
+            height: 300px;
+            width: 300px;
+            border: 9px solid black;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            
+        }
+
+        .firstone {
+            height: 100px;
+            width: 100px;
+            box-sizing: border-box;
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .answer {
+            height: 300px;
+            width: 300px;
+            border: 9px solid black;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        
+        }
+
+        .box {
+            min-width: 0;
+            min-height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+ 
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mainwhitecart">
+
+     
+        <div>
+            <h1>Sudoku</h1>
+
+            <div class="sudoku">
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box"></div>
+                    <div class="box">6</div>
+                    <div class="box"></div>
+                    <div class="box">8</div>
+                    <div class="box"></div>
+                    <div class="box">8</div>
+                    <div class="box"></div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone" style="background-color: aquamarine;">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone" style="background-color: aquamarine;">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone" style="background-color: aquamarine;">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone" style="background-color: aquamarine;">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <h1>Answer</h1>
+
+            <div class="answer">
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box"></div>
+                    <div class="box">6</div>
+                    <div class="box"></div>
+                    <div class="box">8</div>
+                    <div class="box"></div>
+                    <div class="box">8</div>
+                    <div class="box"></div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone" style="background-color: aquamarine;">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone" style="background-color: aquamarine;">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone" style="background-color: aquamarine;">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone" style="background-color: aquamarine;">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+                <div class="firstone">
+                    <div class="box">8</div>
+                    <div class="box">4</div>
+                    <div class="box">6</div>
+                    <div class="box">5</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                    <div class="box">8</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.wrapper {
+  background-color: gold;
+  border: 3px dashed black;
+  padding: 20px;
+  height:auto;
+}
+
+div {
+  border: 3px solid #333;
+  background-color: #dfdfdf;
+  font-size: 20px;
+}
+     
+.wrapper {
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.a1, .a2, .a3, .a4 {
+  width:99%;
+  margin:auto;
+} 
+
+.b1, .b2 {
+  width:99%;
+  margin:auto;
+}
+
+.c1 {
+  width:99%;
+  margin:auto;
+}
+
+
+@media (min-width: 400px) {
+    .wrapper{
+        display: flex;
+        flex-wrap:wrap ;
+        gap:2%;
+
+    }
+    .a1, .a2, .a3, .a4 {
+        flex-basis: 23%;
+        margin-bottom: 1%;
+    }
+    .b1,.b2{
+        flex-basis: 100%;
+        margin-bottom: 1%;
+
+    }
+
+    .c1{
+        flex-basis: 100%;
+
+    }
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+ 
+  <div class="a1">A1</div>
+  <div class="a2">A2</div>
+  <div class="a3">A3</div>
+  <div class="a4">A4</div>
+
+  <div class="b1">B1</div>
+  <div class="b2">B2</div>
+
+  <div class="c1">C1</div>
+  
+</div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.wrapper {
+  background-color: gold;
+  border: 3px dashed black;
+  padding: 20px;
+  height:auto;
+  gap: 2%;
+
+}
+
+
+div {
+  border: 3px solid #333;
+  background-color: #dfdfdf;
+  font-size: 20px;
+  gap: 2%;
+
+}
+
+.wrapper {
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.a1, .a2, .a3, .a4 {
+  width:99%;
+  margin:auto;
+  gap: 2%;
+
+} 
+
+.b1, .b2 {
+  width:99%;
+  margin:auto;
+}
+
+.c1 {
+  width:99%;
+  margin:auto;
+
+}
+
+@media (min-width: 200px) {
+  .a1, .a2 {
+    width: 100%;
+    margin: auto;
+    gap: 2%;
+
+  }
+}
+
+
+@media (min-width: 200px) {
+    .a1,.a2{
+        width: 50%;
+        margin: auto;
+        gap: 2%;
+    }
+    
+    
+}
+
+@media (min-width: 200px) {
+    .b1,.b2{
+        width: 100%;
+        margin: auto;
+
+    }
+    
+}
+
+@media (min-width:200px) {
+    .c1{
+        width: 100%;
+        margin: auto;
+
+    }
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+  <div class="a1">1</div>
+  <div class="a2">2</div>
+  <div class="a3">3</div>
+  <div class="a4">4</div>
+
+  <div class="b1">5</div>
+  <div class="b2">6</div>
+
+  <div class="c1">7</div>
+  
+</div>
+</body>
+</html>

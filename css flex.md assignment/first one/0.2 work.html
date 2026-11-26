@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Seller Products</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .mainpart {
+            width: 100%;
+            max-width: 1100px;
+            min-height: 500px;
+            margin: auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: stretch;
+            gap: 25px;
+        }
+
+
+
+        .product {
+            width: 33.33%;
+            min-width: 0;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 3px 15px #eeeeee;
+            border-radius: 5px;
+        }
+
+
+        .product img {
+            width: 100%;
+            height: 155px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #20152e;
+        }
+
+        
+
+        .discount {
+            font-size: 10px;
+            color: #ff5575;
+        }
+
+        .dots {
+            float: right;
+            font-size: 13px;
+        }
+
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 4px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #eeeeee;
+        }
+
+        .features span {
+            font-size: 7px;
+            color: #777;
+            background-color: #f7f7f7;
+            padding: 5px 3px;
+            border-radius: 10px;
+     
+        }
+
+        .buttion {
+            width: 100%;
+            height: 35px;
+            margin-top: 20px;
+            border: 1px solid black;
+            border-radius: 25px;
+            background-color: white;
+            color: black;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .product:first-of-type .buttion {
+            background-color: black;
+            color: white;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="mainpart">
+
+
+        <div class="product">
+            <img src="headphones.jpg" alt="Black headphones">
+            <h3>Beats by Dre C 3450</h3>
+
+            <div>
+                <span class="price">$39.6</span>
+                <span class="discount">30% off</span>
+
+            </div>
+
+            <div class="features">
+                <span>50mm Drivers</span>
+                <span>Bluetooth V5.0</span>
+                <span>600mAh Battery</span>
+            </div>
+
+            <button class="buttion">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="watch.jpg" alt="Black sports watch">
+
+            <h3>Wave Style CallUCC Edition</h3>
+
+            <div>
+                <span class="price">$49.6</span>
+                <span class="discount">30% off</span>
+  
+            </div>
+
+            <div class="features">
+                <span>50mm Drivers</span>
+                <span>Bluetooth V5.0</span>
+                <span>600mAh Battery</span>
+            </div>
+
+            <button class="buttion">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="earbuds.jpg" alt="Black wireless earbuds">
+
+            <h3>Rockerz 195V2 Pro</h3>
+
+            <div>
+                <span class="price">$39.6</span>
+                <span class="discount">30% off</span>
+
+            </div>
+
+            <div class="features">
+                <span>50mm Drivers</span>
+                <span>Bluetooth V5.0</span>
+                <span>600mAh Battery</span>
+            </div>
+
+            <button class="buttion">Add to Cart</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

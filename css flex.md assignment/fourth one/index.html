@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Board</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #eee;
+        }
+
+        .board {
+            width: 330px;
+            height: 330px;
+            position: relative;
+            background: white;
+            border: 1px solid black;
+        }
+
+        /* Four home boxes */
+        .home {
+            width: 132px;
+            height: 132px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .red {
+            background: red;
+            top: 0;
+            left: 0;
+        }
+
+        .green {
+            background: green;
+            top: 0;
+            right: 0;
+        }
+
+        .blue {
+            background: blue;
+            bottom: 0;
+            left: 0;
+        }
+
+        .yellow {
+            background: yellow;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* White box and circles */
+        .inner {
+            width: 88px;
+            height: 88px;
+            background: white;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+        }
+
+        .circle {
+            width: 22px;
+            height: 22px;
+            background: white;
+            border: 2px solid;
+            border-radius: 50%;
+        }
+
+        .red-circle { border-color: red; }
+        .green-circle { border-color: green; }
+        .blue-circle { border-color: blue; }
+        .yellow-circle { border-color: yellow; }
+
+        /* Common path style */
+        .path {
+            position: absolute;
+            display: grid;
+        }
+
+        .cell {
+            border: 1px solid #888;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .red-cell { background: red; }
+        .green-cell { background: green; }
+        .blue-cell { background: blue; }
+        .yellow-cell { background: yellow; }
+
+        .star {
+            font-size: 17px;
+        }
+
+        /* Top and bottom paths */
+        .top-path, .bottom-path {
+            width: 66px;
+            height: 132px;
+            left: 132px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .top-path { top: 0; }
+        .bottom-path { bottom: 0; }
+
+        /* Left and right paths */
+        .left-path, .right-path {
+            width: 132px;
+            height: 66px;
+            top: 132px;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .left-path { left: 0; }
+        .right-path { right: 0; }
+
+        /* Center triangles */
+
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .triangle-top {
+            border-width: 0 33px 33px;
+            border-color: transparent transparent yellow;
+            transform: rotate(180deg);
+        }
+
+        .triangle-right {
+            border-width: 33px 0 33px 33px;
+            border-color: transparent transparent transparent yellow;
+        }
+
+        .triangle-bottom {
+            border-width: 33px 33px 0;
+            border-color: blue transparent transparent;
+        }
+
+        .triangle-left {
+            border-width: 33px 33px 33px 0;
+            border-color: transparent red transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="board">
+
+        <!-- Red home -->
+        <div class="home red">
+            <div class="inner">
+                <div class="circle red-circle"></div>
+                <div class="circle red-circle"></div>
+                <div class="circle red-circle"></div>
+                <div class="circle red-circle"></div>
+            </div>
+        </div>
+
+        <!-- Green home -->
+        <div class="home green">
+            <div class="inner">
+                <div class="circle green-circle"></div>
+                <div class="circle green-circle"></div>
+                <div class="circle green-circle"></div>
+                <div class="circle green-circle"></div>
+            </div>
+        </div>
+
+        <!-- Blue home -->
+        <div class="home blue">
+            <div class="inner">
+                <div class="circle blue-circle"></div>
+                <div class="circle blue-circle"></div>
+                <div class="circle blue-circle"></div>
+                <div class="circle blue-circle"></div>
+            </div>
+        </div>
+
+        <!-- Yellow home -->
+        <div class="home yellow">
+            <div class="inner">
+                <div class="circle yellow-circle"></div>
+                <div class="circle yellow-circle"></div>
+                <div class="circle yellow-circle"></div>
+                <div class="circle yellow-circle"></div>
+            </div>
+        </div>
+
+        <!-- Top path -->
+        <div class="path top-path">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell green-cell"></div>
+            <div class="cell green-cell"><span class="star">★</span></div>
+
+            <div class="cell green-cell"><span class="star">★</span></div>
+            <div class="cell green-cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell green-cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell green-cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell green-cell"></div>
+            <div class="cell"></div>
+        </div>
+
+        <!-- Bottom path -->
+        <div class="path bottom-path">
+            <div class="cell"></div>
+            <div class="cell blue-cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell blue-cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell blue-cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell blue-cell"></div>
+            <div class="cell blue-cell"><span class="star">★</span></div>
+
+            <div class="cell blue-cell"><span class="star">★</span></div>
+            <div class="cell blue-cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+
+        <!-- Left path -->
+        <div class="path left-path">
+            <div class="cell"></div>
+            <div class="cell red-cell"><span class="star">★</span></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell red-cell"></div>
+            <div class="cell red-cell"></div>
+            <div class="cell red-cell"></div>
+            <div class="cell red-cell"></div>
+            <div class="cell red-cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell red-cell"><span class="star">★</span></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+
+        <!-- Right path -->
+        <div class="path right-path">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell yellow-cell"><span class="star">★</span></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell yellow-cell"></div>
+            <div class="cell yellow-cell"></div>
+            <div class="cell yellow-cell"></div>
+            <div class="cell yellow-cell"></div>
+            <div class="cell yellow-cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell yellow-cell"><span class="star">★</span></div>
+            <div class="cell"></div>
+        </div>
+
+        <!-- Center -->
+        <div class="center">
+            <div class="triangle triangle-top"></div>
+            <div class="triangle triangle-right"></div>
+            <div class="triangle triangle-left"></div>
+            <div class="triangle triangle-bottom"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
